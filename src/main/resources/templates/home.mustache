@@ -1,0 +1,44 @@
+{{>uheader}}
+
+<main>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xl-2 "></div>
+                <div class="col-xl-8 ">
+                    <div class="row g-3">
+                        {{#lampList}}
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card shadow-sm">
+
+                                    <img class="card-img-top pt-3" src="/img/{{image}}"
+                                         style="object-fit: contain"
+                                         alt="" width="100%" height="250"/>
+
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{price}} <span class="text-muted h6">р.</span></h5>
+                                        <p class="card-text">Настольная лампа<br>{{name}}</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <a class="stretched-link" href="/home/lamp/{{lampId}}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/lampList}}
+                    </div>
+                </div>
+                <div class="col-xl-2"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+<footer class="container d-flex justify-content-end">
+    <p class="float-right"><a href="#">Back to top</a></p>
+</footer>
+{{>footer}}

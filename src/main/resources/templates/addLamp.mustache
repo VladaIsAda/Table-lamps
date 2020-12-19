@@ -1,0 +1,108 @@
+{{>header}}
+<main>
+<div class="container">
+
+    <form id="imgForm" action="/lampList/add" method="post" enctype="multipart/form-data" class="needs-validation" novalidate="">
+    <div class="row g-3">
+        <div class="col-md-5 col-lg-4 order-md-last pl-5">
+            <div class="container">
+                <h6 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Изображение</span>
+                </h6>
+                    <div class="form-group">
+                        <input accept="image/*" onchange="loadFile(event)" type="file" name="file" class="form-control-file">
+                        <div class="invalid-feedback">
+                            Выберите изображение.
+                        </div>
+                    </div>
+                <img id="output" src="" class="mt-5 ml-3" alt="" width="100%" height="300"
+                     style="object-fit: contain; visibility: hidden"/>
+            </div>
+        </div>
+
+
+        <div class="col-md-5 col-lg-6">
+            <h4 class="mb-3">Добавление товара</h4>
+                <div class="row g-3">
+
+                    <div class="col-12">
+                        <label for="name" class="form-label">Название лампы</label>
+                        <div class="input-group">
+                            <input accept="image/*" onchange="loadFile(event)" type="text" class="form-control" name="name" placeholder="Название лампы" required="">
+                            <div class="invalid-feedback">
+                                Введите название товара.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="price" class="form-label">Стоимость</label>
+                        <input type="text" class="form-control" name="price" placeholder="Стоимость" required="">
+                        <div class="invalid-feedback">
+                            Введите стоимость товара.
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="stand" class="form-label">Стойка</label>
+                        <select class="form-select" name="stand" required="">
+                            <option value="">Выберите...</option>
+                            <option>неподвижная</option>
+                            <option>складная</option>
+                            <option>гибкая</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Выберите вид стойки.
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="material" class="form-label">Материал каркаса</label>
+                        <select class="form-select" name="material" required="">
+                            <option value="">Выберите...</option>
+                            <option>акрил</option>
+                            <option>дерево</option>
+                            <option>каучук</option>
+                            <option>металл</option>
+                            <option>оптический полимер</option>
+                            <option>пластик</option>
+                            <option>поликарбонат</option>
+                            <option>силикон</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Выберите материал каркаса.
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="power_type" class="form-label">Тип питания</label>
+                        <select class="form-select" name="power_type" required="">
+                            <option value="">Выберите...</option>
+                            <option>от сети</option>
+                            <option>USB</option>
+                            <option>встроенный аккумулятор</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Выберите материал каркаса.
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="height" class="form-label">Высота<span class="text-muted">(см)</span></label>
+                        <input type="text" class="form-control" name="height" placeholder="Высота" required="">
+                        <div class="invalid-feedback">
+                            Введите высоту лампы.
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Добавить товар</button>
+                </div>
+
+        </div>
+    </div>
+    </form>
+</div>
+
+</main>
+{{>footer}}
